@@ -3,5 +3,14 @@
     "version": "0.0.1",
     "description": "my first socket.io app",
     "type": "commonjs",
-    "dependencies": {}
+    "dependencies": {},
+
+
+
+    "main": "listen.js",
+    "scripts": {
+      "start": "node index.js"
+    }
+
+
   }
