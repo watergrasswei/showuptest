@@ -7,7 +7,7 @@
 
 
 
-    "main": "listen.js",
+    "main": "index.js",
     "scripts": {
       "start": "node index.js"
     }
