@@ -8,6 +8,7 @@ const { availableParallelism } = require('node:os');
 const cluster = require('node:cluster');
 const { createAdapter, setupPrimary } = require('@socket.io/cluster-adapter');
 
+
 if (cluster.isPrimary) {
     const numCPUs = availableParallelism();
     // create one worker per available core
@@ -82,10 +83,11 @@ async function main() {
     }
   });
 
-  const port = process.env.PORT;
+  const PORT = process.env.PORT || 3000;
+  const HOST = process.env.HOST || 'localhost';
 
-  server.listen(port, () => {
-    console.log(`server running at http://localhost:${port}`);
+  server.listen(PORT, HOST, () => {
+    console.log(`Server listening on ${HOST}:${PORT}`);
   });
 }
 
